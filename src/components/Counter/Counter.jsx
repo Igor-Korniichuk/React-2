@@ -12,10 +12,7 @@ class Counter extends React.Component {
         setTimeout(() => { console.log(target) }, 1000);
     }
 
-    handleDecrement = () => {
-        console.log("кликнули в уменшить");
-        console.log(this);
-    }
+    handleDecrement = () => {}
 
 
 
