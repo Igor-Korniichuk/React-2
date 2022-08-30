@@ -1,0 +1,13 @@
+.Counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid tomato;
+    background-color: aquamarine;
+}
+
+.Counter__value {
+    margin-bottom: 20px;
+}
