@@ -3,22 +3,35 @@ import styles from "./Counter.module.css";
 
 
 class Counter extends React.Component {
-    handleEncrement = (event) => {
-        console.log("кликнули в увеличить");
 
-        const target = event.target;  
-        // для получения event.target в асинхронном коде записываем в переменную
-        
-        setTimeout(() => { console.log(target) }, 1000);
+    static defaultProps = {
+        initialValue: 0,
     }
 
-    handleDecrement = () => {}
+    static propTypes = {
+        
+    }
+            state = {
+            value: this.props.initialValue,
+        };
+
+
+    handleEncrement = () => {
+        // const target = event.target;
+        // // для получения event.target в асинхронном коде записываем в переменную        
+        // setTimeout(() => { console.log(target) }, 1000);
+        this.setState(prevState => ({value: prevState.value + 1,}))       
+    }
+
+    handleDecrement = () => {
+        this.setState(prevState => ({value: prevState.value - 1,}))
+    }
 
 
 
     render() {
         return <div className={styles.Counter}>
-                    <span className={styles.Counter__value}>0</span>
+                    <span className={styles.Counter__value}>{this.state.value}</span>
 
                     <div className="Counter__controls">
                         <button type="button" onClick={this.handleEncrement}>Увеличить на 1</button>
