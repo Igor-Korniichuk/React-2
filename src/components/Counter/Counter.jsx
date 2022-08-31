@@ -1,4 +1,5 @@
 import React from "react";
+import Controls from "./Controls";
 import styles from "./Counter.module.css";
 
 
@@ -9,7 +10,7 @@ class Counter extends React.Component {
     }
 
     static propTypes = {
-        
+
     }
             state = {
             value: this.props.initialValue,
@@ -32,11 +33,7 @@ class Counter extends React.Component {
     render() {
         return <div className={styles.Counter}>
                     <span className={styles.Counter__value}>{this.state.value}</span>
-
-                    <div className="Counter__controls">
-                        <button type="button" onClick={this.handleEncrement}>Увеличить на 1</button>
-                        <button type="button" onClick={this.handleDecrement}>Уменшить на 1</button>
-                    </div>
+            <Controls onEncrement={this.handleDecrement} onDecrement={this.handleEncrement } />                    
                 </div>
     }
 }
