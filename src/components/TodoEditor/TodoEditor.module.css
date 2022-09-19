@@ -1,0 +1,28 @@
+.TodoEditor {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid orange;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.TodoEditor__button {
+    width: 100%;
+    margin-left: auto;
+    border-radius: 4px;
+    padding: 12px 24px;
+    background-color: tomato;
+    color: white;
+    font-weight: 500;   
+    border: 1px solid gray;
+    }
+
+    .TodoEditor__button:hover, .TodoEditor__button:focus {
+            background-color: blue;
+        }
+
+    .TodoEditor__button:active {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        }
