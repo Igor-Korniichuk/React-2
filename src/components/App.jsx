@@ -5,12 +5,13 @@ import TodoEditor from "./TodoEditor";
 import initialTodos from "../todos.json";
 import shortid from "shortid";
 import Filter from "./Filter";
+import Form from "./Form";
 
 
 class App extends Component {
   state = {
     todos: initialTodos, 
-    filter: '',
+    filter: '',    
   };
 
   addTodo = text => {    
@@ -63,7 +64,22 @@ class App extends Component {
 
   return todos.filter(todo => todo.text.toLowerCase().includes(normalizedFilter),)
   }
+
+  // handleNameChange = event => {
+  //   console.log(event.currentTarget.value);
+  //   this.setState({ name: event.currentTarget.value });
+  // }
+
+  // handleTagChange = event => {
+  //   this.setState({ tag: event.currentTarget.value });
+  // }
   
+  
+  formSubmitHandler = data => {
+    console.log(data);
+}
+  
+
   render() {
     const { todos, filter } = this.state;
     const totalTodoCount = todos.length;
@@ -86,6 +102,8 @@ class App extends Component {
           onDeleteTodo={this.deleteTodo}
           onToggleCompleted={this.toggleCompleted}
         />
+        
+        <Form onSubmit={this.formSubmitHandler} /> 
     </div>
   );
   }
